@@ -9,5 +9,8 @@ interface MessageRepository {
 
     Category findMessage(Long id);
 
+    void delete(Category category);
+
+    void delete(Long id);
 }
 

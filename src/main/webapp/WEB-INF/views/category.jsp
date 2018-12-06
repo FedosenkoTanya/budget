@@ -12,7 +12,8 @@
      height: 200px;
    }
    td{
-     padding:10px 10px 10px 10px;}
+     padding:10px 10px 10px 10px;
+     }
 
   </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -62,11 +63,16 @@
 
     <tr align="center">
     <td>
-            <select name="select" size="3" multiple>
+
             <c:forEach var="cl" items="${listCategory}">
-                <option>${cl.name}</option>
+                <option><tr>
+                <td>${cl.name}</td>
+                 <td><a href="/delete/${cl.id}">Удалить</a>
+                 </td></tr></option>
+
+
             </c:forEach>
-             </select>
+
     </td>
     </tr>
           </form>

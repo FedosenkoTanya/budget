@@ -31,5 +31,21 @@ public class InMemoryMessageRepository implements MessageRepository {
         return this.categories.get(id);
     }
 
+
+    @Override
+    public void delete(Category category) {
+        if(category!=null) {
+            categories.remove(category);
+        }
+    }
+
+    @Override
+    public void delete(Long id) {
+        if(id!=null) {
+           categories.remove(id);
+        }
+
+    }
+
 }
 

@@ -22,23 +22,29 @@ public class MyWebController {
     @GetMapping ("/category")
     public String form(Model model){
 
+        model.addAttribute("listCategory", categoryList.findAll());
+
         return "category";
     }
-    
     @PostMapping("/category")
-    public ModelAndView formsave(Category category){
+    public String formsave(Category category){
         categoryList.save(category);
         System.out.println("!!!!!!!!!!!!!! " + categoryList.findAll());
 
-
-
-        ModelAndView model = new ModelAndView("category");
-
-
-        model.addObject("listCategory", categoryList.findAll());
-
-        return model;
+        return "redirect:/category";
     }
+
+    @GetMapping("/delete/{id}")
+    public String delete (@PathVariable Long id){
+        categoryList.delete(id);
+        System.out.println("Уже удалили " + categoryList.findAll());
+
+        return "redirect:/category";
+    }
+
+
+
+
 
 
 
