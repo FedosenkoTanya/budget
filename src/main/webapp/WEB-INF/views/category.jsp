@@ -8,9 +8,11 @@
 <title>Категории</title>
 <style>
    select {
-    width: 300px;
-     height: 300px;
+    width: 200px;
+     height: 200px;
    }
+   td{
+     padding:10px 10px 10px 10px;}
 
   </style>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -20,40 +22,56 @@
 
 
 <body>
-    <div class="container">
-      <div class="navbar">
-        <div class="navbar-inner">
-          <ul class="nav">
-            <li>
-              <a href="/">
-                Транзакции
-              </a>
-            </li>
-            <li>
-               <a href="/category">
-                  Категории
-               </a>
-            </li>
-          </ul>
+
+        <div class="container">
+          <div class="navbar">
+            <div class="navbar-inner">
+
+
+                <table border="0">
+                    <tr>
+                        <td>
+                            <a href="/">Транзакции
+                            </a>
+
+                        </td>
+                         <td>
+
+                            <a href="/category">Категории
+                             </a>
+                         </td>
+                    </tr>
+
+
+            </div>
+          </div>
+
+    <tr align="center">
+    <td>
+          <div class="container">
+          <form id="messageForm" action="/category" method="post">
+
+            <input type="text" id="name" name="name" value="" placeholder="Название категории..." required />
+
+    </td>
+    <td>
+                <div class="form-actions">
+                  <input type="submit" value="Добавить" />
+                </div>
+        </td></tr>
+
+    <tr align="center">
+    <td>
+            <select name="select" size="3" multiple>
+            <c:forEach var="cl" items="${listCategory}">
+                <option>${cl.name}</option>
+            </c:forEach>
+             </select>
+    </td>
+    </tr>
+          </form>
         </div>
-      </div>
-      <div class="container">
-      <form id="messageForm" action="/category" method="post">
-
-        <label for="name">Название категории</label>
-        <input type="text" id="name" name="name" value="" />
-
-        <div class="form-actions">
-          <input type="submit" value="Добавить" />
         </div>
-        <select name="select" size="3" multiple>
-        <c:forEach var="cl" items="${listCategory}">
-            <option>${cl.name}</option>
-        </c:forEach>
-
-           </select>
-      </form>
-    </div>
-    </div>
+    </table>
   </body>
 </html>

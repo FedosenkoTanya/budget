@@ -41,7 +41,7 @@ public class Category {
 
     @Override
     public String toString() {
-        return "Product{" +
+        return "Category{" +
                 "name='" + name + '\'' +
                 '}';
     }

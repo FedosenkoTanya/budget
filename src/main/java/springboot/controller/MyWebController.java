@@ -24,7 +24,7 @@ public class MyWebController {
 
         return "category";
     }
-
+    
     @PostMapping("/category")
     public ModelAndView formsave(Category category){
         categoryList.save(category);
@@ -34,22 +34,12 @@ public class MyWebController {
 
         ModelAndView model = new ModelAndView("category");
 
-//        model.addAttribute("listProduct", productList.findAll());
+
         model.addObject("listCategory", categoryList.findAll());
 
         return model;
     }
 
-   // @GetMapping("/editform/{productId}")
-   // public String editform(@PathVariable Long productId, Model model){
-    //    System.out.println("Product id is : " + productId);
-     //   Product product = productList.findMessage(productId);
-
-     //   model.addAttribute("listProduct", product);
-
-
-     //   return "editform";
-   // }
 
 
 }

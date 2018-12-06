@@ -5,7 +5,7 @@ interface MessageRepository {
 
     Iterable<Category> findAll();
 
-    Category save(Category product);
+    Category save(Category category);
 
     Category findMessage(Long id);
 
